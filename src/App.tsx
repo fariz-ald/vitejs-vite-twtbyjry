@@ -9,7 +9,16 @@ import {
 } from 'lucide-react';
 
 // --- Firebase Initialization ---
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+//const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+const firebaseConfig = {
+  apiKey: "AIzaSyBmiVHj-lSuISSor59etSmiJL98ePwpgMg",
+  authDomain: "ngs-farms.firebaseapp.com",
+  projectId: "ngs-farms",
+  storageBucket: "ngs-farms.firebasestorage.app",
+  messagingSenderId: "743357710753",
+  appId: "1:743357710753:web:6a6857c3cc671104030be0"
+};
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
