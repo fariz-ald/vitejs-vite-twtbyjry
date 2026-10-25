@@ -228,3 +228,50 @@ export default function App() {
                 {owners.map(o => <option key={o.id} value={o.name}>{o.name}</option>)}
               </select>
               <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Catat</button>
+            </form>
+
+            <div className="space-y-2">
+              {finances.map(f => (
+                <div key={f.id} className="flex justify-between items-center bg-white p-3 border rounded shadow-sm">
+                  <div>
+                    <p className="font-bold">{f.desc}</p>
+                    <p className="text-xs text-gray-500">{f.date} • Kategori: {f.category} • Dibayar oleh: <span className="font-medium text-blue-600">{f.payer}</span></p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <p className="text-red-600 font-bold">- Rp {f.amount.toLocaleString('id-ID')}</p>
+                    <button onClick={() => deleteDocHandler("finances", f.id)} className="text-red-400 hover:text-red-600"><Trash2 size={18}/></button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* DASHBOARD */}
+        {activeTab === 'dashboard' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white p-6 rounded-lg border-l-4 border-blue-500 shadow-sm">
+              <h3 className="text-gray-500 text-sm font-bold">TOTAL INDUKAN</h3>
+              <p className="text-3xl font-bold mt-2">{goats.length}</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-green-500 shadow-sm">
+              <h3 className="text-gray-500 text-sm font-bold">TOTAL CEMPE</h3>
+              <p className="text-3xl font-bold mt-2">{offsprings.length}</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-yellow-500 shadow-sm">
+              <h3 className="text-gray-500 text-sm font-bold">PEMILIK/PENGELOLA</h3>
+              <p className="text-3xl font-bold mt-2">{owners.length}</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-red-500 shadow-sm">
+              <h3 className="text-gray-500 text-sm font-bold">PENGELUARAN</h3>
+              <p className="text-xl font-bold mt-2 text-red-600">
+                Rp {finances.reduce((acc, curr) => acc + curr.amount, 0).toLocaleString('id-ID')}
+              </p>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
