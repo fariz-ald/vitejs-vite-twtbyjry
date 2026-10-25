@@ -555,7 +555,7 @@ export default function App() {
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-64 bg-green-900 text-white flex flex-col">
         <div className="p-6 border-b border-green-800">
-          <h1 className="text-2xl font-extrabold tracking-tight">Kambing<span className="text-green-400">Hub</span></h1>
+          <h1 className="text-2xl font-extrabold tracking-tight">NPG's<span className="text-green-400">Farms</span></h1>
           <p className="text-green-200 text-xs mt-1">Sistem Kemitraan Peternakan</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">
