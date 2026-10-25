@@ -227,4 +227,4 @@ export default function App() {
                 <option value="">-- Dibayar Oleh --</option>
                 {owners.map(o => <option key={o.id} value={o.name}>{o.name}</option>)}
               </select>
-              <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Catat</button
+              <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Catat</button>
