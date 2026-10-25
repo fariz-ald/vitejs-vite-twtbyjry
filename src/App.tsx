@@ -19,9 +19,9 @@ const firebaseConfig = {
   appId: "1:743357710753:web:6a6857c3cc671104030be0"
 };
 
-//const app = initializeApp(firebaseConfig);
-//const auth = getAuth(app);
-//const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 //const appId = typeof __app_id !== 'undefined' ? __app_id : 'goat-farm-app';
 
 export default function App() {
