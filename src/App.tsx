@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-//const appId = typeof __app_id !== 'undefined' ? __app_id : 'goat-farm-app';
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'goat-farm-app';
 
 export default function App() {
   const [user, setUser] = useState(null);
